@@ -1,0 +1,35 @@
+@import "components/_reset.scss";
+@import "components/_typography.scss";
+@import "components/_modular.scss";
+@import "components/_buttons.scss";
+@import "components/_tables.scss";
+@import "components/_myMenu.scss";
+@import "components/_pageContainer.scss"; 
+
+body,html{
+   
+    font-family: "Arial", sans-serif;
+    font-size: 15px;
+    margin: 25px;
+  
+} 
+
+#logicString
+{
+    height: 35px;
+    border: thin solid #ccc;
+    margin-top: 15px;
+   
+    vertical-align: middle;
+}
+
+.treeContainer
+{
+    margin-top: 15px;
+     margin-bottom: 10px;
+    #treeResults
+    {
+        width: 600px;
+        height: 300px;
+    }
+}
