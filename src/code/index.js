@@ -10,6 +10,7 @@ import TreeParser from './parser/treeParser'
      $("#logicString").html(parser.toString());
      let treeText = JSON.stringify(parser.getTree(),null,2);
      $('#treeResults').val(treeText);
+      
      
  }
  
