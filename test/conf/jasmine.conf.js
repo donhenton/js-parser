@@ -18,26 +18,26 @@ module.exports = function (config) {
             'test/tests/*.js',
         ],
         htmlReporter: {
-            outputFile: 'target/jasmine_unit_tests.html'
+            outputFile: 'target/test_reports/jasmine_unit_tests.html'
 
         },
         coverageReporter: {
             reporters: [
                 {
                     type: 'html',
-                    dir: 'target/reports/jasmine/html_coverage/',
-                    subdir: 'jasmine-chrome',
-                    file: 'jasmine-chrome.xml'
+                    dir: 'target/test_reports/jasmine/html_coverage/',
+                    subdir: 'jasmine-phantom',
+                    file: 'jasmine-phantom.xml'
                 },
 
                 {
                     type: 'cobertura',
-                    dir: 'target/reports/jasmine/coverage/',
-                    subdir: 'chrome',
-                    file: 'jasmine-chrome.xml'
+                    dir: 'target/test_reports/jasmine/coverage/',
+                    subdir: 'phantom',
+                    file: 'jasmine-phantom.xml'
                 }, {
                     type: 'json',
-                    dir: 'target/reports/jasmine/coverage/',
+                    dir: 'target/test_reports/jasmine/coverage/',
                     subdir: 'json',
                     file: 'jasmine-coverage.json'
                 }]
