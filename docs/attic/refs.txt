@@ -1,0 +1,16 @@
+
+
+http://stackoverflow.com/questions/30339675/how-to-map-json-data-to-a-class
+http://www.syntaxsuccess.com/viewarticle/writing-jasmine-unit-tests-in-es6
+http://busypeoples.github.io/post/testing-workflow-with-es6/
+
+http://stackoverflow.com/questions/34874341/unit-testing-browserify-project-with-karma-jasmine
+
+
+
+
+http://stackoverflow.com/questions/23325832/parse-arithmetic-expression-with-javascript
+https://medium.com/@daffl/beyond-regex-writing-a-parser-in-javascript-8c9ed10576a6#.8uoat8t2j
+
+This is the source of the code
+http://stackoverflow.com/questions/37469768/infix-to-binary-expression-tree
