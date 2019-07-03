@@ -1,6 +1,6 @@
 /* global expect */
 
-import TreeParser from './../../src/code/parser/treeParser';
+import TreeParser from './../../../src/code/parser/treeParser';
 
 describe("parse_tests.js", function () {
     

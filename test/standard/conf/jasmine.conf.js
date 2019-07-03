@@ -6,7 +6,7 @@ var babelify = require('babelify');
 module.exports = function (config) {
     config.set({
         // base path that will be used to resolve all patterns (eg. files, exclude)
-        basePath: '../..',
+        basePath: '../../..',
         autoWatch: false,
         // frameworks to use
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
@@ -15,7 +15,7 @@ module.exports = function (config) {
         files: [
              
             'src/code/parser/**/*.js',
-            'test/tests/*.js',
+            'test/standard/tests/*.js',
         ],
         htmlReporter: {
             outputFile: 'target/test_reports/jasmine_unit_tests.html'
@@ -48,7 +48,7 @@ module.exports = function (config) {
         preprocessors: {
             
             'src/code/parser/**/*.js': ['browserify'],
-            'test/tests/*.js': ['browserify']
+            'test/standard/tests/*.js': ['browserify']
         },
         browserify: {
             debug: true,

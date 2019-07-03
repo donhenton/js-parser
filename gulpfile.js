@@ -83,7 +83,7 @@ function Bundle() {
 gulp.task('test', function(done) {
     process.env.NODE_ENV = 'test'
     return new karma.Server({
-            configFile:  __dirname + '/test/conf/jasmine.conf.js' 
+            configFile:  __dirname + '/test/standard/conf/jasmine.conf.js' 
         }, done).on('error', function(err) {
            throw err;
        }).start();
