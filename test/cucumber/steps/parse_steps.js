@@ -27,6 +27,14 @@ import {Given, When, Then} from 'cucumber';
      expect('{"property":"A"}').equal(JSON.stringify(treeParser.getTree()));
   });
 
-
+//Given The treeParser is loaded with "(A)"
+//Then the result should also be equal
  
-
+ Given('The treeParser is loaded with A in parentheses', function () {
+    treeParser = new TreeParser('(A)');
+    treeParser.parse();
+  })
+ Then('the result should also be equal', function () {
+ 
+     expect('{"property":"A"}').equal(JSON.stringify(treeParser.getTree()));
+  });
