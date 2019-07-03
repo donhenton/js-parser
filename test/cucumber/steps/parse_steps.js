@@ -3,14 +3,8 @@ const expect = require('chai').expect;
 import TreeParser from './../../../src/code/parser/treeParser';
 import {Given, When, Then} from 'cucumber';
 
-
-
-
 let treeParser = null;
 let currentError = null;
-
-//Given The parse is loaded with 'A'
-//Then The result should be equal to <''{"property":"A"}''>
 let sampleString = null;
 
 Given('The treeParser is loaded with {string}', function (input) {
