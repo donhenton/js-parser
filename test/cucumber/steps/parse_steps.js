@@ -1,9 +1,9 @@
 const defineSupportCode = require('cucumber').defineSupportCode;
 const expect = require('chai').expect;
 import TreeParser from './../../../src/code/parser/treeParser';
+import {Given, When, Then} from 'cucumber';
 
-
-defineSupportCode(function ( {Given, Then, When}) {
+ 
 
   
   let treeParser = null;
@@ -13,12 +13,20 @@ defineSupportCode(function ( {Given, Then, When}) {
 
   Given('The treeParser is loaded with "A"', function () {
     treeParser = new TreeParser('A');
+    treeParser.parse();
   })
+  
+  
+  Then('The parser should be not null', function () {
+     
+     expect(treeParser).to.not.equal(null)
+  });
 
-  Then('The result should be equal to {input}', function (input) {
-    expect(input).toEqual(JSON.stringify(treeParser.getTree()));
+  Then('The result should be equal', function () {
+ 
+     expect('{"property":"A"}').equal(JSON.stringify(treeParser.getTree()));
   });
 
 
-})
+ 
 
