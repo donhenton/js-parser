@@ -31,6 +31,8 @@ var argv = require('yargs').argv;
 var rename = require("gulp-rename");
 var envify = require('envify');
 var fs = require('fs')
+var shell = require('gulp-shell');
+
 
 var notify = require("./build_utils/build_utils").notify;
 var targetLocation = './target/'
@@ -88,6 +90,12 @@ gulp.task('test', function(done) {
            throw err;
        }).start();
    });
+
+
+gulp.task('cucumber', shell.task([
+  './node_modules/.bin/cucumber-js --require-module babel-register ./test/cucumber/features -r ./test/cucumber/steps'
+]));
+
 
 
 
