@@ -186,7 +186,7 @@ gulp.task('watch', function () {
 
 gulp.task('serve', function (done) {
     livereload.listen();
-    gulp.src('target')
+    gulp.src('public_html')
             .pipe(server({
                 livereload: {
                     enable: true
