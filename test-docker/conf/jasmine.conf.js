@@ -73,6 +73,7 @@ module.exports = function (config) {
         //browsers: ['PhantomJS'],
         browsers: ['Chrome_no_sandbox'],
         customLaunchers: {
+            Chrome_no_sandbox: {
             base: 'Chrome',
             flags: [
               '--no-sandbox',
@@ -80,7 +81,8 @@ module.exports = function (config) {
               '--headless',
               '--disable-gpu',
               '--remote-debugging-port=9222',
-            ],
+            ]
+        }
         },
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
