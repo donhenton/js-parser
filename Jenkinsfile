@@ -1,22 +1,24 @@
 pipeline {
-    agent {
-        label '!windows'
-    }
+    docker {
+            image 'donhenton/docker-gulp-sass-node'
+            args  '-v /Users/${CERT_LOCATION}/ssl-installs/ssl-certs:/etc/ssl/certs'
+        }
 
     environment {
-        DISABLE_AUTH = 'true'
-        DB_ENGINE    = 'sqlite'
-        GIT_SSL_NO_VERIFY=1
+        NONSENSE=1
     }
 
     stages {
-        stage('Build') {
+        stage('npm install') {
             steps {
-                echo "Database engine is ${DB_ENGINE}"
-                echo "DISABLE_AUTH is ${DISABLE_AUTH}"
-                echo "SSL VERIFY is ${GIT_SSL_NO_VERIFY}"
-                sh 'printenv'
+                    sh 'npm set cafile /etc/ssl/certs/ca-bundle.pem'
+                    sh 'npm install'
+                }
             }
-        }
+        stage('run tests') {
+            steps {
+                    sh 'gulp test-docker'
+                }
+            }
     }
 }
