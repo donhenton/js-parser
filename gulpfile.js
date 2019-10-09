@@ -11,7 +11,6 @@
 
 var karma = require('karma');
 var gulp = require('gulp');
-var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var source = require('vinyl-source-stream');
@@ -50,7 +49,7 @@ console.log("compiling to '"+targetLocation+"'")
  */
 var pageURL = 'http://localhost:8080';
 
-var SASS_FILES = './src/sass/**/*.scss';
+
 var WATCH_JS = ['./src/code/**/*.js'];
 var MAIN_HTML_FILE = ['./src/html/index.html'];
 
@@ -131,20 +130,9 @@ gulp.task('build', function () {
             });
     ;
 });
-var sassProcess =
-        function () {
 
-            return gulp.src('./src/sass/main.scss')
-                    .pipe(sass().on('error', sass.logError))
-                    .pipe(concat('css/main.css'))
-                  //  .pipe(uglifycss())
-                    .pipe(gulp.dest(targetLocation));
-        };
 
-gulp.task('sass', function () {
-    sassProcess();
 
-});
 
 gulp.task('copy-assets', function () {
     
@@ -159,45 +147,7 @@ gulp.task('copy-assets', function () {
 });
 
 
-gulp.task('watch', function () {
+ 
 
-    watch(SASS_FILES, function (events, done) {
-
-        sassProcess()
-                .on('finish', function ( ) {
-                    gutil.log("processing change in css");
-                    livereload.reload(pageURL);
-                });
-
-    });
-
-    watch(WATCH_JS, function (events, done) {
-
-        gulp.start('build');
-    });
-
-    watch(MAIN_HTML_FILE, function (events, done) {
-        gutil.log("starting html change");
-        gulp.start('copy-html');
-    });
-
-});
-
-gulp.task('serve', function (done) {
-    livereload.listen();
-    gulp.src('target')
-            .pipe(server({
-                livereload: {
-                    enable: true
-                },
-                host: '127.0.0.1',
-                port: 8080,
-                defaultFile: 'index.html',
-                directoryListing: false,
-                open: true
-            }));
-});
-
-
-gulp.task('release', gulpsync.sync(['clean','build', 'copy-assets',  'copy-html','sass']));
-gulp.task('dev', gulpsync.sync(['clean', 'build', 'sass', 'copy-assets',  'copy-html', 'watch', 'serve']));
+ 
+ 
