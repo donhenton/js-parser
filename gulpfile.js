@@ -89,7 +89,14 @@ gulp.task('test', function(done) {
        }).start();
    });
 
-
+   gulp.task('test-docker', function(done) {
+    process.env.NODE_ENV = 'test'
+    return new karma.Server({
+            configFile:  __dirname + '/test-docker/conf/jasmine.conf.js' 
+        }, done).on('error', function(err) {
+           throw err;
+       }).start();
+   });
 
 gulp.task('copy-html', function () {
 
