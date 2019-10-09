@@ -27,15 +27,15 @@ module.exports = function (config) {
                 {
                     type: 'html',
                     dir: 'target/test_reports/jasmine/html_coverage/',
-                    subdir: 'jasmine-phantom',
-                    file: 'jasmine-phantom.xml'
+                    subdir: 'jasmine-chrome-headless',
+                    file: 'jasmine-chrome-headless.xml'
                 },
 
                 {
                     type: 'cobertura',
                     dir: 'target/test_reports/jasmine/coverage/',
-                    subdir: 'phantom',
-                    file: 'jasmine-phantom.xml'
+                    subdir: 'chrome-headless',
+                    file: 'jasmine-chrome-headless.xml'
                 }, {
                     type: 'json',
                     dir: 'target/test_reports/jasmine/coverage/',
@@ -70,7 +70,7 @@ module.exports = function (config) {
         captureTimeout: 60000,
         // start these browsers
         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-        //browsers: ['PhantomJS'],
+        //browsers: ['chrome-headlessJS'],
         browsers: ['Chrome_no_sandbox'],
         customLaunchers: {
             Chrome_no_sandbox: {
