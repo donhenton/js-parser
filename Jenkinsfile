@@ -26,4 +26,9 @@ pipeline {
                 }
             }
     }
+    post {
+        always {
+            junit 'target/test_reports/junit/TESTS.xml'
+        }
+    }
 }
