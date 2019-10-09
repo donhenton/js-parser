@@ -1,22 +1,26 @@
 pipeline {
     agent {
-        label '!windows'
+
+        docker {
+            image 'hochzehn/karma-jasmine-phantomjs'
+        }
     }
 
     environment {
-        DISABLE_AUTH = 'true'
-        DB_ENGINE    = 'sqlite'
-        GIT_SSL_NO_VERIFY=1
+        NONSENSE=0
     }
 
     stages {
         stage('Build') {
             steps {
-                echo "Database engine is ${DB_ENGINE}"
-                echo "DISABLE_AUTH is ${DISABLE_AUTH}"
-                echo "SSL VERIFY is ${GIT_SSL_NO_VERIFY}"
-                sh 'printenv'
+               sh 'npm set cafile /etc/ssl/certs/ca-bundle.pem'
+               sh 'npm install'
             }
+        }
+        stage('run tests') {
+            steps {
+                    sh 'gulp test'
+                }
         }
     }
 }
