@@ -2,7 +2,7 @@ pipeline {
     agent {
 
         docker {
-            image 'donhenton/docker-gulp-sass-node'
+            image 'jenkins-chrome:1.0.0'
             args  '-v /Users/${CERT_LOCATION}/ssl-installs/ssl-certs:/etc/ssl/certs'
         }
 
