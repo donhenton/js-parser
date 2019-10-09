@@ -61,7 +61,7 @@ module.exports = function (config) {
         reporters: ['progress', 'dots', 'html','coverage','junit'],
         junitReporter: {
             
-            outputFile: 'target/test_reports/junit',
+   
             outputFile: 'target/test_reports/junit/junit.xml/', // if included, results will be saved as $outputDir/$browserName/$outputFile
             suite: '', // suite will become the package name attribute in xml testsuite element
             useBrowserName: false, // add browser name to report and classes names
