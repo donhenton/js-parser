@@ -1,6 +1,7 @@
 // Karma configuration
 // Generated on Tue Mar 24 2015 09:16:43 GMT-0500 (CDT)
 //http://karma-runner.github.io/0.10/config/configuration-file.html
+//https://medium.com/front-end-weekly/karma-js-headless-chrome-and-docker-35c134df28f3
 var babelify = require('babelify');
 
 module.exports = function (config) {
@@ -70,7 +71,17 @@ module.exports = function (config) {
         // start these browsers
         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
         //browsers: ['PhantomJS'],
-        browsers: ['PhantomJS'],
+        browsers: ['Chrome_no_sandbox'],
+        customLaunchers: {
+            base: 'Chrome',
+            flags: [
+              '--no-sandbox',
+              '--disable-setuid-sandbox',
+              '--headless',
+              '--disable-gpu',
+              '--remote-debugging-port=9222',
+            ],
+        },
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
         singleRun: true
