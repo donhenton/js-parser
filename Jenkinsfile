@@ -1,8 +1,13 @@
 pipeline {
-    docker {
+    agent {
+
+        docker {
             image 'donhenton/docker-gulp-sass-node'
             args  '-v /Users/${CERT_LOCATION}/ssl-installs/ssl-certs:/etc/ssl/certs'
         }
+
+    }
+    
 
     environment {
         NONSENSE=1
