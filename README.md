@@ -28,3 +28,4 @@ pointing to self signed certs, if needed.
     * git
     * specify branch if needed (jenkins-branch)
 
+<https://medium.com/front-end-weekly/karma-js-headless-chrome-and-docker-35c134df28f3>
