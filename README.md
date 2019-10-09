@@ -11,3 +11,8 @@ Simple logic parser
 
 ## Demo
 https://donhenton.github.io/js-parser/public_html/
+
+
+## Branches
+* cucumber-branch using cucumber for tests
+* jenkins-branch using a Jenkinsfile for CI/CD experiments
