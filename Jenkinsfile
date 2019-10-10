@@ -2,13 +2,11 @@ pipeline {
     agent {
 
         docker {
-            image 'jenkins-chrome:1.0.0'
+            image 'donhenton/docker-headless-chrome'
             args  '-v /Users/${CERT_LOCATION}/ssl-installs/ssl-certs:/etc/ssl/certs'
         }
 
     }
-    
-
     environment {
         NONSENSE=1
     }
