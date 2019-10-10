@@ -1,1 +1,0 @@
-docker build -t jenkins-chrome:1.0.0 . 
