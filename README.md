@@ -19,7 +19,8 @@ The Jenkins file is set up for a Docker based version of Jenkins. See
 <https://github.com/donhenton/udemy-docker/blob/master/jenkins-server/docker-compose.yml>
 The build will need to be parameterized to specify ${CERT_LOCATION} which is actually the user name on a Mac
 the stuff about ssl-installs and ssl-certs are locations determined by the docker-compose file for
-pointing to self signed certs, if needed.
+pointing to self signed certs, if needed. This particular jenkins file is tied to the above docker-compose file and
+is fairly idiosyncratic. The mapped volumes were used to deal with self-signed cert issues.
 
 ### Build Properties
 
